@@ -1,4 +1,4 @@
-# JavaScript Week 1 - Starting with the Basics
+# JavaScript Week 2 - Basic Functions
 
 Your mission: Pass the Tests!
 
@@ -8,7 +8,7 @@ Your mission: Pass the Tests!
 2. Clone it to your machine, then:
 
 ```console
-cd js-week-01
+cd js-week-02
 npm install
 ```
 
