@@ -39,11 +39,15 @@ test('knows what it does', () =>
 test('returns something', () =>
   expect(index.returnSomething()).toBeDefined())
 
-test('is an inline commenting pro', () =>
-  expect(index.inlineComment()).toBe('uncomment this line'))
+test('is an inline commenting pro', () => {
+  const match = code.match(/inlineComment = \(\) =>([\s\S]+?)\/\//)
+  expect(match[1].trim()).toBe("'uncomment this line'");
+  expect(index.inlineComment()).toBe('uncomment this line')
+})
 
 test('is a multiline commenting pro', () => {
   const match = code.match(/multiLineNoInline([\s\S]+?)}/)
   expect(match[1]).not.toContain('//')
+  expect(match[1]).toContain('/*')
   expect(index.multiLineNoInline()).toBeDefined()
 })
